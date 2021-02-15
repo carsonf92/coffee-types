@@ -1,0 +1,73 @@
+/* _coffee-grid.scss */
+
+body {
+	align-items: center;
+	background: #f1f1f1 url('../images/honeycomb-pattern.png') center/270px repeat;
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 40px;
+}
+
+.coffee-grid {
+	background-color: var(--black);
+	box-shadow: 0 8px 40px rgba(#000, 0.5);
+	color: white;
+	display: grid;
+	grid-gap: 4px;
+	width: 100%;
+}
+
+.coffee-infographic {
+	background-color: var(--brown);
+	padding: 40px;
+	text-align: center;
+
+	&__title {
+		color: var(--foam);
+		text-shadow: 0 4px 4px rgba(#000, 0.5);
+	}
+
+	&__mug {
+		border: 12px solid var(--white);
+		border-radius: 8px 8px 120px 120px;
+		overflow: hidden;
+		position: relative;
+		padding-bottom: 75%;
+	}
+
+	&__plate {
+		background-color: var(--white);
+		border-radius: 40px;
+		height: 12px;
+		margin-top: -12px;
+	}
+}
+
+.coffee-menu {
+	background-color: var(--brown);
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		color: var(--foam);
+		font-size: 24px;
+		padding: 12px 40px;
+	}
+}
+
+.coffee-ingredients {
+	background-color: var(--brown);
+	text-align: center;
+}
+
+
+
+
+
+
+

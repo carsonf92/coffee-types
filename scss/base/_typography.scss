@@ -1,0 +1,25 @@
+/* _typography.scss */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+:root {
+	--condensed: 'Roboto Condensed';
+}
+
+body {
+	font-family: var(--condensed);
+}
+
+h1 {
+	font-size: 32px;
+	letter-spacing: 2px;
+	margin-top: 0;
+	text-transform: uppercase;
+}
+
+h6 {
+	font-size: 14px;
+	letter-spacing: 2px;
+	margin-top: 0;
+	text-transform: uppercase;
+}
