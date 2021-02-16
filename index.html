@@ -29,19 +29,31 @@
 		<main class="coffee-infographic">
 			<h1 class="coffee-infographic__title">Coffee Types</h1>
 			<div class="coffee-infographic__mug">
-				<div class="coffee-infographic__water"></div>
-				<div class="coffee-infographic__foam"></div>
-				<div class="coffee-infographic__milk"></div>
-				<div class="coffee-infographic__coffee"></div>
-				<div class="coffee-infographic__chocolate"></div>
+				<div class="coffee-infographic__ingredient--water"></div>
+				<div class="coffee-infographic__ingredient--foam"></div>
+				<div class="coffee-infographic__ingredient--milk"></div>
+				<div class="coffee-infographic__ingredient--coffee"></div>
+				<div class="coffee-infographic__ingredient--chocolate"></div>
 			</div>
 			<div class="coffee-infographic__plate"></div>
 		</main>
 		<nav class="coffee-menu">
 			<ul class="coffee-menu__list">
-				<!-- water, milk, foam, coffee, chocolate -->
+				<!-- water, foam, milk, coffee, chocolate -->
 				<!-- use JS to generate these -->
-				<li class="coffee-menu__item" data-ratio="0, 50, 0, 25, 25">Mocha
+				<li class="coffee-menu__item" data-ratio="50, 0, 0, 50, 0">Americano
+					<div class="coffee-menu__indicator">
+						<span class="coffee-menu__indicator-dot coffee-menu__indicator-dot--water"></span>
+						<span class="coffee-menu__indicator-dot coffee-menu__indicator-dot--coffee"></span>
+					</div>
+				</li>
+				<li class="coffee-menu__item" data-ratio="0, 0, 25, 75, 0">Espresso
+					<div class="coffee-menu__indicator">
+						<span class="coffee-menu__indicator-dot coffee-menu__indicator-dot--milk"></span>
+						<span class="coffee-menu__indicator-dot coffee-menu__indicator-dot--coffee"></span>
+					</div>
+				</li>
+				<li class="coffee-menu__item" data-ratio="0, 0, 50, 25, 25">Mocha
 					<div class="coffee-menu__indicator">
 						<span class="coffee-menu__indicator-dot coffee-menu__indicator-dot--milk"></span>
 						<span class="coffee-menu__indicator-dot coffee-menu__indicator-dot--coffee"></span>

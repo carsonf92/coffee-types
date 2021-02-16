@@ -15,6 +15,7 @@ body {
 	color: white;
 	display: grid;
 	grid-gap: 4px;
+	max-width: 320px;
 	width: 100%;
 }
 
@@ -31,6 +32,7 @@ body {
 	&__mug {
 		border: 12px solid var(--white);
 		border-radius: 8px 8px 120px 120px;
+		margin-top: 40px;
 		overflow: hidden;
 		position: relative;
 		padding-bottom: 75%;
@@ -41,6 +43,20 @@ body {
 		border-radius: 40px;
 		height: 12px;
 		margin-top: -12px;
+	}
+
+	&__ingredient {
+		background: transparent center/80px 80px repeat;
+		border-bottom: 8px solid;
+		border-top: 8px solid;
+		height: 0;
+		transform: height 0.5s ease;
+
+		&--water 		{ background-image: url('images/water-pattern.svg'); border-color: var(--water); }
+		&--foam 		{ background-image: url('images/foam-pattern.svg'); border-color: var(--foam); }
+		&--milk 		{ background-image: url('images/milk-pattern.svg'); border-color: var(--milk); }
+		&--coffee 		{ background-image: url('images/coffee-pattern.svg'); border-color: var(--coffee); }
+		&--chocolate 	{ background-image: url('images/chocolate-pattern.svg'); border-color: var(--chocolate); }
 	}
 }
 
@@ -54,15 +70,61 @@ body {
 	}
 
 	&__item {
+		align-items: center;
+		border-bottom: 2px solid var(--black);
 		color: var(--foam);
-		font-size: 24px;
+		display: flex;
+		font-size: 20px;
+		justify-content: space-between;
 		padding: 12px 40px;
+
+		&:last-child {
+			border: none;
+		}
+	}
+
+	&__indicator {
+		background-color: var(--black);
+		border-radius: 16px;
+		display: flex;
+		padding: 2px 1px;
+	}
+
+	&__indicator-dot {
+		border-radius: 50%;
+		display: block;
+		height: 8px;
+		margin: 0 2px;
+		width: 8px;
+
+		&--water 		{ background-color: var(--water); }
+		&--foam 		{ background-color: var(--foam); }
+		&--milk 		{ background-color: var(--milk); }
+		&--coffee 		{ background-color: var(--coffee); }
+		&--chocolate 	{ background-color: var(--chocolate); }
 	}
 }
 
 .coffee-ingredients {
 	background-color: var(--brown);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 40px 0 16px;
 	text-align: center;
+
+	&__ingredient {
+		margin: 0 24px 24px;
+	}
+
+	&__pattern {
+		border-radius: 50%;
+		box-shadow: 0 0 0 4px var(--black);
+		display: block;
+		height: 64px;
+		margin: 0 auto 16px;
+		width: 64px;
+	}
 }
 
 
