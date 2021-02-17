@@ -15,8 +15,20 @@ body {
 	color: white;
 	display: grid;
 	grid-gap: 4px;
-	max-width: 320px;
+	max-width: 295px;
 	width: 100%;
+
+	@include bp-tablet {
+		grid-template-areas: "a b"
+                       		 "c c";
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: auto auto;
+		max-width: 640px;
+	}
+
+	@include bp-desktop {
+		max-width: 960px;
+	}
 }
 
 .coffee-infographic {
@@ -32,10 +44,13 @@ body {
 	&__mug {
 		border: 12px solid var(--white);
 		border-radius: 8px 8px 120px 120px;
-		margin-top: 40px;
+		box-sizing: border-box;
+		height: 135px;
+		margin: 40px auto 0;
 		overflow: hidden;
+		padding: 24px 0 0;
 		position: relative;
-		padding-bottom: 75%;
+		width: 180px;
 	}
 
 	&__plate {
@@ -47,39 +62,109 @@ body {
 
 	&__ingredient {
 		background: transparent center/80px 80px repeat;
-		border-bottom: 8px solid;
-		border-top: 8px solid;
 		height: 0;
-		transform: height 0.5s ease;
+		margin: 0 -8px;
+		transition: height 0.5s ease;
 
-		&--water 		{ background-image: url('images/water-pattern.svg'); border-color: var(--water); }
-		&--foam 		{ background-image: url('images/foam-pattern.svg'); border-color: var(--foam); }
-		&--milk 		{ background-image: url('images/milk-pattern.svg'); border-color: var(--milk); }
-		&--coffee 		{ background-image: url('images/coffee-pattern.svg'); border-color: var(--coffee); }
-		&--chocolate 	{ background-image: url('images/chocolate-pattern.svg'); border-color: var(--chocolate); }
+		&--water 		{ background-image: url('images/water-pattern.svg'); box-shadow: inset 0 0 0 4px var(--water); }
+		&--foam 		{ background-image: url('images/foam-pattern.svg'); box-shadow: inset 0 0 0 4px var(--foam); }
+		&--milk 		{ background-image: url('images/milk-pattern.svg'); box-shadow: inset 0 0 0 4px var(--milk); }
+		&--coffee 		{ background-image: url('images/coffee-pattern.svg'); box-shadow: inset 0 0 0 4px var(--coffee); }
+		&--chocolate 	{ background-image: url('images/chocolate-pattern.svg'); box-shadow: inset 0 0 0 4px var(--chocolate); }
+	}
+
+	@include bp-tablet {
+		grid-area: a;
+
+		&__mug {
+			height: 180px;
+			margin: 40px auto 0;
+			width: 240px;
+		}
+
+		&__plate {
+			margin: -12px auto 0;
+			width: 260px;
+		}
+	}
+
+	@include bp-desktop {
+		height: 400px;
+
+		&__mug {
+			height: 240px;
+			margin-top: 64px;
+			width: 320px;
+		}
+
+		&__plate {
+			width: 340px;
+		}
 	}
 }
 
 .coffee-menu {
 	background-color: var(--brown);
+	position: relative;
+
+	&::after {
+		background: linear-gradient(transparent, var(--brown));
+		bottom: 0;
+		content: '';
+		height: 48px;
+		left: 0;
+		pointer-events: none;
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+	}
 
 	&__list {
 		list-style: none;
 		margin: 0;
-		padding: 0;
+		max-height: 292px;
+		overflow-y: scroll;
+		padding: 0 0 48px;
+
+		&::-webkit-scrollbar {
+  			width: 6px;
+		}
+
+		&::-webkit-scrollbar-track {
+  			background: var(--black);
+		}
+
+		&::-webkit-scrollbar-thumb {
+  			background: var(--foam);
+  			border: 2px solid var(--black);
+  			border-radius: 8px;
+		}
 	}
 
 	&__item {
 		align-items: center;
 		border-bottom: 2px solid var(--black);
 		color: var(--foam);
+		cursor: pointer;
 		display: flex;
 		font-size: 20px;
 		justify-content: space-between;
 		padding: 12px 40px;
+		position: relative;
+		transition: background-color 0.2s ease;
+		z-index: 1;
 
 		&:last-child {
 			border: none;
+		}
+
+		&:hover {
+			background-color: #53402F;
+		}
+
+		&--selected {
+			background-color: #53402F;
+			color: var(--white);
 		}
 	}
 
@@ -103,6 +188,21 @@ body {
 		&--coffee 		{ background-color: var(--coffee); }
 		&--chocolate 	{ background-color: var(--chocolate); }
 	}
+
+	@include bp-tablet {
+		grid-area: b;
+
+		&__item {
+			max-height: 312px;
+			padding: 12px 24px;
+		}
+	}
+
+	@include bp-desktop {
+		&__list {
+			max-height: 432px;
+		}
+	}
 }
 
 .coffee-ingredients {
@@ -110,7 +210,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	padding: 40px 0 16px;
+	padding: 40px 0 8px;
 	text-align: center;
 
 	&__ingredient {
@@ -124,6 +224,14 @@ body {
 		height: 64px;
 		margin: 0 auto 16px;
 		width: 64px;
+	}
+
+	@include bp-tablet {
+		grid-area: c;
+	}
+
+	@include bp-desktop {
+		justify-content: space-around;
 	}
 }
 
