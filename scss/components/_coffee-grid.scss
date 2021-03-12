@@ -80,16 +80,16 @@ body {
 	}
 
 	&__ingredient {
-		background: transparent center/80px 80px repeat;
+		background: var(--black) center/80px 80px repeat;
 		height: 0;
 		margin: 0 -8px;
 		transition: height 0.5s ease;
 
-		&--water 		{ background-image: url('images/water-pattern.svg'); box-shadow: inset 0 0 0 8px var(--water); }
-		&--foam 		{ background-image: url('images/foam-pattern.svg'); box-shadow: inset 0 0 0 8px var(--foam); }
-		&--milk 		{ background-image: url('images/milk-pattern.svg'); box-shadow: inset 0 0 0 8px var(--milk); }
-		&--coffee 		{ background-image: url('images/coffee-pattern.svg'); box-shadow: inset 0 0 0 8px var(--coffee); }
-		&--chocolate 	{ background-image: url('images/chocolate-pattern.svg'); box-shadow: inset 0 0 0 8px var(--chocolate); }
+		&--water 		{ background-image: url('../images/water-pattern.svg'); /* box-shadow: inset 0 0 0 8px var(--water); */ }
+		&--foam 		{ background-image: url('../images/foam-pattern.svg'); /* box-shadow: inset 0 0 0 8px var(--foam); */ }
+		&--milk 		{ background-image: url('../images/milk-pattern.svg'); /* box-shadow: inset 0 0 0 8px var(--milk); */ }
+		&--coffee 		{ background-image: url('../images/coffee-pattern.svg'); /* box-shadow: inset 0 0 0 8px var(--coffee); */ }
+		&--chocolate 	{ background-image: url('../images/chocolate-pattern.svg'); /* box-shadow: inset 0 0 0 8px var(--chocolate); */ }
 	}
 
 	@include bp-tablet {
@@ -257,6 +257,7 @@ body {
 	}
 
 	&__pattern {
+		background-color: var(--black);
 		border-radius: 50%;
 		box-shadow: 0 0 0 4px var(--black);
 		display: block;
