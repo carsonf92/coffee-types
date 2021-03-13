@@ -7,12 +7,18 @@
 // water, foam, milk, coffee, chocolate
 
 var coffees = {
-	Americano: [50, 0, 0, 50, 0],
+	Americano: [70, 0, 0, 30, 0],
+	Breve: [0, 33, 33, 33, 0],
 	Cappuccino: [0, 50, 25, 25, 0],
-	Espresso: [0, 0, 0, 100, 0],
+	Chocolate_Milk: [0, 0, 60, 0, 40],
+	Doppio: [0, 0, 0, 75, 0],
+	Espresso: [0, 0, 0, 40, 0],
+	Flat_White: [0, 60, 0, 40, 0],
 	Latte: [0, 0, 75, 25, 0],
+	Lungo: [40, 0, 0, 60, 0],
 	Macchiato: [0, 75, 0, 25, 0],
-	Mocha: [0, 0, 50, 25, 25]
+	Marocchino: [0, 25, 0, 37.5, 37.5],
+	Mocha: [0, 25, 25, 25, 25]
 }
 
 // ========================
@@ -24,7 +30,7 @@ var menu = document.querySelector('.coffee-menu__list');
 // loop through items in coffee object
 for (let type in coffees){
 	var item = document.createElement('li');
-	item.textContent = type;
+	item.textContent = type.replace('_', ' ');
 	item.setAttribute('class', 'coffee-menu__item');
 	item.setAttribute('data-ratio', coffees[type]);
 	menu.appendChild(item);
